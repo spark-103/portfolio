@@ -1,0 +1,16 @@
+# 비밀 정보와 개인별 환경 설정
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 의존성과 임시 산출물
+node_modules/
+.cache/
+*.log
+
+# 운영체제에서 생성하는 파일
+.DS_Store
+Thumbs.db
+Desktop.ini
