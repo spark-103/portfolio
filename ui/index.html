@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="박세진 포트폴리오의 재사용 가능한 UI 컴포넌트와 디자인 테마 미리보기">
+  <title>박세진 | 포트폴리오 컴포넌트</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <script defer src="components/utils.js"></script>
+  <script defer src="components/portfolio-button.js"></script>
+  <script defer src="components/status-badge.js"></script>
+  <script defer src="components/empty-state.js"></script>
+  <script defer src="components/education-strip.js"></script>
+  <script defer src="components/work-card.js"></script>
+  <script defer src="components/learning-card.js"></script>
+  <script defer src="components/form-field.js"></script>
+  <script defer src="components/ui-alert.js"></script>
+  <script defer src="components/site-header.js"></script>
+  <script defer src="components/site-footer.js"></script>
+  <script defer src="preview.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="demo-banner">디자인 시스템 미리보기 · 아래 예시 카드는 실제 프로젝트 실적이 아닙니다.</div>
+  <site-header works-href="#components" works-label="컴포넌트" learning-href="#form-demo" learning-label="입력 폼"></site-header>
+  <main id="main" class="container" tabindex="-1">
+    <section id="intro" class="hero anchor" aria-labelledby="hero-title">
+      <p class="eyebrow">기후테크 · 코딩 · 데이터 관리</p>
+      <h1 id="hero-title">기후테크를 배우며<br>코딩과 데이터 관리<br>역량을 키웁니다.</h1>
+      <p>박세진의 포트폴리오를 위한 작은 디자인 시스템.<br>배움과 작업을 담는 화면을 일관된 컴포넌트로 만듭니다.</p>
+      <div class="row hero-actions">
+        <portfolio-button href="#components" size="large" icon="arrow">컴포넌트 살펴보기</portfolio-button>
+        <portfolio-button href="#form-demo" size="large" variant="secondary">입력 폼 체험하기</portfolio-button>
+      </div>
+    </section>
+    <education-strip></education-strip>
+    <section class="section" aria-labelledby="palette-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / FOUNDATION</p><h2 id="palette-title">자연스럽고 선명한 색상</h2><p>밝은 배경 위에 녹색으로 중요한 행동을 표시합니다.</p></div></div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch__color" style="--swatch:#166534"></div><div class="swatch__label">포레스트 그린<br><strong>#166534</strong></div></div>
+        <div class="swatch"><div class="swatch__color" style="--swatch:#EAF4EC"></div><div class="swatch__label">리프 틴트<br><strong>#EAF4EC</strong></div></div>
+        <div class="swatch"><div class="swatch__color" style="--swatch:#F4E7C5"></div><div class="swatch__label">웜 샌드<br><strong>#F4E7C5</strong></div></div>
+        <div class="swatch"><div class="swatch__color" style="--swatch:#FAFBF7"></div><div class="swatch__label">아이보리 배경<br><strong>#FAFBF7</strong></div></div>
+      </div>
+    </section>
+    <section id="components" class="section anchor" aria-labelledby="buttons-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / ACTIONS</p><h2 id="buttons-title">행동의 우선순위가 보이는 버튼</h2><p>기본 높이 48px · 모서리 12px · 키보드 포커스 제공</p></div></div>
+      <div class="panel stack">
+        <div><p class="demo-label">종류</p><div class="row"><portfolio-button id="primary-demo" icon="arrow">주요 버튼 체험</portfolio-button><portfolio-button id="secondary-demo" variant="secondary">보조 버튼 체험</portfolio-button><portfolio-button variant="text" href="#intro">소개로 돌아가기</portfolio-button><portfolio-button id="danger-demo" variant="danger">삭제 동작 예시</portfolio-button></div></div>
+        <div><p class="demo-label">크기</p><div class="row"><portfolio-button size="small" variant="secondary" href="#cards">작게 · 44px</portfolio-button><portfolio-button href="#cards">기본 · 48px</portfolio-button><portfolio-button size="large" href="#cards">크게 · 52px</portfolio-button></div></div>
+        <div><p class="demo-label">상태</p><div class="row"><portfolio-button disabled>사용할 수 없음</portfolio-button><portfolio-button loading>저장</portfolio-button><portfolio-button id="loading-demo" variant="secondary">처리 중 상태 체험</portfolio-button></div></div>
+        <ui-alert id="action-feedback" message="버튼을 누르면 이곳에 동작 결과가 표시됩니다."></ui-alert>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="badges-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / STATUS</p><h2 id="badges-title">글자로도 전달하는 상태</h2></div></div>
+      <div class="panel row"><status-badge tone="success">초급 수료</status-badge><status-badge tone="info">중급 수강 중</status-badge><status-badge tone="warning">공개 전 확인</status-badge><status-badge tone="danger">입력 확인 필요</status-badge><status-badge>초안</status-badge></div>
+    </section>
+    <section id="cards" class="section anchor" aria-labelledby="cards-title">
+      <div class="section-heading"><div><p class="eyebrow">04 / CONTENT</p><h2 id="cards-title">작업과 배움을 담는 카드</h2><p>구조 확인용 예시입니다. 실제 작업물은 추후 등록합니다.</p></div></div>
+      <div class="grid">
+        <work-card heading="프로젝트 제목 예시" kind="프로젝트" state="진행 중" summary="해결하려는 문제와 직접 수행한 작업을 짧게 소개하는 영역입니다. 실제 실적이 아닌 디자인 예시입니다." tags="기후테크,코딩,데이터 관리,학습"></work-card>
+        <work-card heading="개별 작업물 제목 예시" kind="개별 작업물" state="진행 중" summary="코드 실습이나 정리한 데이터 등 개별 산출물의 요약을 담는 영역입니다." tags="학습 기록,개별 실습"></work-card>
+        <learning-card heading="학습 주제 예시" course="중급 과정" summary="무엇을 배웠는지 자신의 말로 정리하고, 실제 적용 사례를 연결합니다. 예시 콘텐츠입니다." stage="개념 학습"></learning-card>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="empty-title">
+      <div class="section-heading"><div><p class="eyebrow">05 / EMPTY STATE</p><h2 id="empty-title">자료가 없어도 자연스러운 화면</h2></div></div>
+      <div class="stack"><empty-state heading="프로젝트를 준비하고 있습니다." description="앞으로 완성할 작업물을 이곳에 차근차근 담겠습니다."></empty-state><empty-state icon="book" heading="학습 기록을 정리하고 있습니다." description="초급 과정 수료 후, 중급 과정에서 배움을 이어가고 있습니다."></empty-state></div>
+    </section>
+    <section id="form-demo" class="section anchor" aria-labelledby="form-title">
+      <div class="section-heading"><div><p class="eyebrow">06 / FORM</p><h2 id="form-title">내용을 채우는 간결한 입력창</h2><p>입력과 검증만 체험하는 예시입니다. 데이터는 저장·전송되지 않습니다.</p></div></div>
+      <form id="demo-form" class="panel stack demo-form" novalidate>
+        <div class="field-grid">
+          <form-field label="이름" name="name" value="박세진" required hint="포트폴리오에 표시할 이름입니다."></form-field>
+          <form-field label="이메일" name="email" type="email" placeholder="등록할 이메일을 입력해주세요" hint="공개할 주소만 입력해주세요."></form-field>
+          <form-field class="full-width" label="한 줄 소개" name="intro" placeholder="관심 분야와 하고 싶은 일을 적어주세요" required></form-field>
+          <form-field class="full-width" label="자기소개" name="description" multiline placeholder="배우는 내용과 관심을 갖게 된 계기를 적어주세요"></form-field>
+        </div>
+        <div class="row"><portfolio-button type="submit">입력 내용 확인</portfolio-button><portfolio-button id="reset-demo" variant="secondary">입력 초기화</portfolio-button></div>
+        <ui-alert id="form-feedback" message="필수 항목과 이메일 형식을 확인합니다."></ui-alert>
+      </form>
+    </section>
+    <section class="section" aria-labelledby="alerts-title">
+      <div class="section-heading"><div><p class="eyebrow">07 / FEEDBACK</p><h2 id="alerts-title">상황을 알려주는 안내</h2></div></div>
+      <div class="stack"><ui-alert tone="success" message="저장 성공 시 표시하는 안내 예시입니다."></ui-alert><ui-alert tone="warning" message="저장하지 않은 변경 사항이 있습니다."></ui-alert><ui-alert tone="danger" message="불러오지 못했습니다. 잠시 후 다시 시도해주세요."></ui-alert></div>
+    </section>
+  </main>
+  <site-footer></site-footer>
+</body>
+</html>
